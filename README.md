@@ -21,4 +21,39 @@ Installer une dépendance ;
 npm install <nom-de-la-dependance>  --save-dev
 ```
 
+``let`` et ``const`` sont 2 manières de déclarer des variables en JavaScript. 
 
+``let`` valeur qui peut changer.
+
+``const`` valeur qui ne changera jamais
+
+``var`` var est une variable global (interdit)
+
+
+### Les fonctions
+Syntaxe de base
+```bash
+function auCarre(x) {
+    return x * x;
+}
+```
+
+Syntaxe fléchée
+```bash
+const auCarre (x) => {
+    return x * x;
+}
+```
+
+si la fonction ne contient q'une seul instruction, on peut omettre les accolades et le return
+```bash
+const auCarre = x => x * x;
+```
+
+### Les tableaux
+```bash
+const fruits = ["apple","banana","orange"];
+fruits.push("grape");
+console.log(fruits);
+```
+notre variable fruits est mtn ["apple","banana","orange","grape"]
