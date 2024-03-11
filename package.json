@@ -1,11 +1,12 @@
 {
   "name": "isitech-2324-b2-dev-node",
   "version": "1.0.0",
+  "type":"module",
   "description": "",
-  "main": "index.js",
+  "main": "./Projet/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon ./Projet/index.js"
   },
   "author": "Yohann",
   "license": "ISC",
