@@ -58,10 +58,12 @@ console.log(fruits);
 ```
 notre variable fruits est mtn ["apple","banana","orange","grape"]
 
-## Modules
+### Modules
 
 un module est un morceau de code réutilisable qui peut être exporté d'un fichier et importé à un autre
 
 Il existe deux syntaxes pour les imports/export en JS :
 - La syntaxe CommonJS (utilisée dans Node.js)
 - La syntaxe ES6+ (utilisée dans les navigateurs), on parle du format ESM (ECMAScript Modules)
+
+##

@@ -59,7 +59,7 @@
  
 // console.log(divide(a, b));
 
-import {add,getMaxValue,deleteVowels,sortSentence,convertNumber,sortDescending,upVowels} from "../exercice/fonction.js";
+import {add,getMaxValue,deleteVowels,sortSentence,convertNumber,numberToWord,getKey,sortDescending,setCapitalVowels,countVowels,upconsonants} from "../exercice/fonction.js";
 
 console.log(add(2,3));
 
@@ -68,7 +68,7 @@ const t =[5,80,4,6];
 const maxValue = getMaxValue(t)
 console.log("Max value :", maxValue)
 
-const str = "Salut la mif"
+const str = "Bonjour tout le monde"
 const deletedVowels = deleteVowels(str)
 console.log("Votre phrase sans voyelles :", deletedVowels)
 
@@ -80,11 +80,73 @@ const num = 10
 const convertedNumber = convertNumber(num)
 console.log(convertedNumber)
 
+const n = 10
+const unEntierToString = numberToWord(n)
+console.log(unEntierToString)
+
+
+const yo = [{
+        firstname:"Yohann",
+        lastname:"Mathieux",
+    },
+    {
+        firstname:"Yohann",
+        lastname:"Mathieux", 
+    },
+    {
+        firstname:"Yohann",
+        lastname:"Mathieux",
+    }
+];
+const yoFirstName = getKey(yo,"firstname")
+
+const test = yo.map((val) =>{
+    const copie = {...val}
+    copie.firstname = "Pierre"
+    return copie
+})
+console.log("ancien tableau :",yo)
+console.log("nouveau tableau :", test)
+
 const des = [12,2,54,85,9,74]
 const sortedDescending = sortDescending(des)
 console.log(sortedDescending)
 
 
-const up = "Salut la mif"
-const uppVowels = upVowels(up)
-console.log("Votre phrase sans voyelles :", uppVowels)
+const Capital = "Bonjour tout le monde"
+const capitalVowels = setCapitalVowels(Capital)
+console.log("Votre phrase avec les voyelles en maj :", capitalVowels)
+
+
+const vow = "Bonjour tout le monde"
+const numberVowels = countVowels(vow)
+console.log("il y a :", numberVowels, "voyelles dans votre phrase")
+
+
+const cons = "Bonjour tout le monde"
+const uppCons = upconsonants(cons)
+console.log("Votre phrase avec les consonnes en maj :", uppCons)
+
+// Tableaux
+
+import {number,days,pair,fruits,moyenne} from "../exercice/tableaux.js"
+
+console.log(number)
+
+console.log(days[0])
+
+let sum = 0
+for (let i of pair) {
+    sum += i
+}
+console.log(sum)
+
+fruits.push("pineapple")
+console.log(fruits)
+
+sum = 0
+for (let i of moyenne) {
+    sum += i
+}
+const moy = sum / moyenne.length
+console.log(moy)

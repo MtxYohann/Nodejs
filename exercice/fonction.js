@@ -42,14 +42,64 @@ export const convertNumber = (num) =>{
     if (num === 11)
     return "onze"
 }
+// correction
+export const numberToWord =(n) => {
+    const numbers = [
+        "zero","un","deux","trois","quatre","cinq","six","sept","huit","neuf"
+    ]
+    const tens = [
+        "","dix",""
+    ]
+    if (n<20) {
+        return numbers[n]
+    }
+    if (n<100) {
+        const unit = n % 10
+        const ten = Math.floor(n / 10)
+        if (unit === 0) {
+            return tens[ten]
+        }
+        if (unit ===1) {
 
+        }
+    }
+}
+
+//Exercice 6
+export const getKey = (t,key) => {
+    const newYo= t.map((obj) => {
+    return obj[key]})
+    return newYo
+}
+
+// Exercice 7
 export const sortDescending = (des) =>{
     return des.sort(function(a,b){return b-a})
 }
 
+// Exercice 8
+export const setCapitalVowels = (otherString) =>{
+    return otherString.replace(/[aeiou]/gi, function(l) {
+        return l.toUpperCase();
+    });
+}
 
-export const upVowels = (up) =>{
-    return up.replace(/[aeiou]/gi, function(l) {
+// Exercicie 9
+export const countVowels = (vow) =>{
+    // return vow.math(/[aeiou]/gi).length
+    let vowelsCount = 0
+    const vowels = ['a','e','i','o','u','y']
+    for (let char of vow){
+        if (vowels.includes(char)){
+            vowelsCount++
+        }
+    }
+    return vowelsCount
+}
+
+// Exercice 10
+export const upconsonants = (cons) =>{
+    return cons.replace(/[bcdfghjklmnpqrstvwxyz]/gi, function(l) {
         return l.toUpperCase();
     });
 }
