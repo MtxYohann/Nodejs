@@ -1,5 +1,5 @@
-import products from "../data/data.js";
-import Product from "../models/products";
+import {products} from "../data/data.js";
+import  {Product} from "../models/products.js";
 
 export const getIndex = (req,res,next)=>{
     console.log("Product list: ", products)
@@ -7,21 +7,15 @@ export const getIndex = (req,res,next)=>{
         pageTitle: "shop",
         path:"/",
         products: products,
-    })
+    });
 };
 
 export const getProducts = (req, res, next) => {
-    Product.fetchAll()
-      .then(([rows, fieldData]) => {
-        res.render("shop/product-list", {
-          pageTitle: "All Products",
-          path: "/products",
-          products: rows,
-        });
-      })
-      .catch((err) => {
-        if (err) console.log(err);
-      });
+  res.render("shop", {
+    pageTitle: "All Products",
+    path: "/products",
+    products: products,
+  });
 };
 
 export const getProduct = (req, res, next) => {

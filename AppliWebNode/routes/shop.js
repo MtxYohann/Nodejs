@@ -1,14 +1,13 @@
 import express from "express";
-import shopController from "../controllers/shop"
+import {getIndex, getProduct, getProducts} from "../controllers/shop.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("shop", {});
-});
+router.get("/", getProducts);
 
-router.get("/products", shopController.getProducts)
-router.get("/", shopController.getIndex);
+router.get("/products", getProducts)
+router.get("/", getIndex);
+router.get("/product/:productId", getProduct)
 
 
 export default router;

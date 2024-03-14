@@ -1,6 +1,7 @@
 import Express from "express";
 import shopRouter from "./routes/shop.js";
 import { get404 } from "./controllers/errors.js";
+import panierRouter from "./routes/panier.js"
 
 const app = Express();
 
@@ -17,9 +18,10 @@ app.get("/", (req, res) => {
 });
 
 app.use("/shop", shopRouter);
-app.use(get404);
 
-app.use(errorsController.get404);
+app.use("/panier", panierRouter);
+
+app.use(get404);
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");

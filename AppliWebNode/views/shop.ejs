@@ -1,3 +1,6 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+  </head>
 
   <body>
     <% if(products.length > 0) { %>
@@ -6,9 +9,9 @@
           <article class="box">
               <h2 class="text-center"><%= product.title %></h2>
               <div class="text-center">
-                <img class="img" src="<%= product.imageUrl %>" alt="<%= product.title %>"></div>                    
+                <img class="img" src="<%= product.image %>" alt="<%= product.title %>"></div>                    
               <div class="text-center">
-                <div class="child"><p><%= product.price %>></p></div>
+                <div class="child"><p><%= product.price %>€</p></div>
                 <div class="child"><button><span>Mettre au panier</span></button></div>
               </div>
             </article>

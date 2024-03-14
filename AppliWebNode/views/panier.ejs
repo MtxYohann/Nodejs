@@ -1,16 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
-    <link href="/css/style.css" rel="stylesheet"  type="text/css">
-  <header>
-    <body>
-      <div class="container">           
-        <div class="text-center">
-            <div ><a class="logo"><span>.</span>Memeth<span>.</span></a></div>
-        </div>           
-      </div>
-    </body>
-</html>
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+  </head>
 
+  <body>
+    <% if(products.length > 0) { %>
+      <div>
+        <% for(let product of products) { %>  
+          <article class="box">
+            <h2 class="text-center"><%= product.name %></h2>
+            <div class="text-center">
+              <img class="img" src="<%= product.image %>" alt="<%= product.name %>"></div>                    
+            <div class="text-center">
+              <div class="child"><p><%= product.price %>€</p></div>
+              <div class="child"><button><span>Mettre au panier</span></button></div>
+            </div>
+          </article>
+          
+        <% } %>
+      </div>
+    <% } else { %>
+        <h1>No Products Found</h1>
+    <% } %>
+  </body>
+</html>

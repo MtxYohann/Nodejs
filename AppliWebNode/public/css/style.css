@@ -11,7 +11,7 @@ body {
     font-size: 18px;
     line-height: 1.7;
     color: rgba(255, 255, 255, 0.3);
-    background: #000 url(../img/broken_noise.png) repeat;
+    background: #000 url(../images/broken_noise.png) repeat;
   }
  
 .container {
